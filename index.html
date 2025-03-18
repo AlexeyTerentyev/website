@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            transition: 1s;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-size: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            background-image: url(IMG/night.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            align-items: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 140px;
+            z-index: 1000;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: red;
+            text-decoration-line: underline;
+            text-decoration-color: blue;
+        }
+        header div ul {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+        main {
+            flex: 1;
+            min-height: 30vh;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            width: 0vw;
+        }
+        #FirstSlide {
+            margin-top: 15%;
+            max-height: 300px;
+            justify-items: center;
+            display: grid;
+        }
+        #FirstSlide img {
+            width: 200px;
+            height: auto;
+        }
+        #HiPip {
+            color: black;
+            margin-top: 25%;
+            background-color: white;
+            width: 99vw;
+            height: auto;
+            font-size: 24px;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            gap: 10px;
+        }
+        #HiPip b {
+            font-size: 28px;
+        }
+        #portfolio {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        #projectANDway {
+            color: black;
+            display: grid;
+            justify-content: center;
+            justify-items: center;
+            gap: 20px;
+            width: 99vw;
+            background-color: white;
+            padding: 20px;
+        }
+        #project {
+            display: grid;
+            grid-template-areas:
+                "p1 p2 p3"
+                ".  p4  .";
+            gap: 20px;
+            justify-content: center;
+        }
+        #project1 { grid-area: p1; background-color: #007bff; padding: 20px; border-radius: 8px; }
+        #project2 { grid-area: p2; background-color: #dc3545; padding: 20px; border-radius: 8px; }
+        #project3 { grid-area: p3; background-color: #343a40; padding: 20px; border-radius: 8px; }
+        #project4 { grid-area: p4; background-color: #6c757d; padding: 20px; border-radius: 8px; }
+        .project {
+            width: 350px;
+            height: 400px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+        #way {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 8px;
+            display: grid;
+            justify-items: center;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #000;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            max-width: 120vh;
+            width: 50%;
+            padding: 20px;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-content {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            position: relative;
+        }
+        .timeline-content:hover {
+            transform: scale(1.1);
+        }
+        .timeline-content h3 {
+            margin-bottom: 10px;
+        }
+        .timeline-content h4 {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        .timeline-content p {
+            margin-bottom: 10px;
+        }
+        footer {
+            width: 100%;
+            min-height: 10vh;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 40px 20px;
+        }
+        #ContactAndSiteMap{
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+            padding: 20px 250px 20px 250px;
+            gap: 30px;
+        }
+        #Contact h3{margin-bottom: 30px;}
+        #SiteMap h3 {margin-bottom: 30px;}
+        #TAA{
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="start"></div>
+    <header>
+        <span>Portfolio</span>
+        <div>
+            <ul>
+                <li><a href="#start">Главное</a></li>
+                <li><a href="#projectway">Обо мне</a></li>
+                <li><a href="#Contact">Связаться со мной</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="FirstSlide">
+            <img src="IMG/ProfIMG.png" alt="">
+            <div>Терентьев Алексей</div>
+            <div>Студент колледжа & начинающий программист</div>
+        </div>
+        <div id="HiPip">
+            <div>
+                <b>Привет</b>
+                <p>Меня зовут Терентьев Алексей Александрович.</p>
+                <p>Я люблю программировать, а также учиться и познавать новые сферы деятельности.</p>
+                <p>Не стесняйтесь обращаться ко мне или взглянуть на мои прошлые работы ниже.</p>
+                <div id="projectway"></div>
+            </div>
+        </div>
+        <h2 id="portfolio">Портфолио</h2>
+        <div>
+            <div id="projectANDway">
+                <h2>Мои проекты</h2>
+                <div id="project">
+                    <div id="project1" class="project">
+                        <h2>Time tracking dashboard</h2>
+                        <p>Сайт позволяет отслеживать время, проведённое за различными видами деятельности, и анализировать продуктивность. Основной упор сделан на интуитивно понятный интерфейс и современный дизайн.</p>
+                        <a href="https://myprojects-ebon.vercel.app/allProjects/time-tracking-dashboard-main/index.html">Перейти на сайт</a>
+                    </div>
+                    <div id="project2" class="project">
+                        <h2>Visma</h2>
+                        <p>Проект по созданию корпоративного сайта для вымышленного морского порта. Реализованы адаптивный дизайн, интерактивные блоки и простая навигация.</p>
+                        <a href="https://myprojects-ebon.vercel.app/allProjects/Visma/index.html">Перейти на сайт</a>
+                    </div>
+                    <div id="project3" class="project">
+                        <h2>Travel to your dream destination</h2>
+                        <p>Прототип сайта для бронирования путешествий. В проекте реализован адаптивный дизайн и удобная навигация для быстрого поиска и бронирования билетов.</p>
+                        <a href="https://myprojects-ebon.vercel.app/allProjects/travel-main/index.html">Перейти на сайт</a>
+                    </div>
+                    <div id="project4" class="project">
+                        <h2>Sneakers</h2>
+                        <p>Проект интернет-магазина обуви с адаптивной вёрсткой, корзиной и динамическим отображением цен. Основной акцент на улучшении навыков работы с HTML, CSS и JavaScript.</p>
+                        <a href="https://myprojects-ebon.vercel.app/allProjects/ecommerce-product-page-main/index.html">Перейти на сайт</a>
+                    </div>
+                </div>
+                <div id="way">
+                    <h2>Моя временная шкала</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Апрель 2021 года</h3>
+                                <p>Именно в этот момент я решил стать программистом и выбрал сферу Web-программирования.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Июль - сентябрь 2022 года</h3>
+                                <p>Подал заявление и поступил в колледж на специальность "Информационные технологии и программирование".</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>2023 год и 2024 год</h3>
+                                <h3>2 курс</h3>
+                                <p>Во время обучения на втором курсе участвовал в большом количестве конкурсов по Web-программированию, в которых занимал в основном призовые места, участвовал в "Коде будущего".</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Март 2024 года</h3>
+                                <h3>Первая практика</h3>
+                                <p>Создал первый полноценный сайт с использованием HTML, CSS, JavaScript и PHP, который стал важным шагом в профессиональном развитии.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Апрель 2025 года</h3>
+                                <h3>Открытие фриланс-профиля</h3>
+                                <p>Создал профиль на фриланс-платформе, чтобы предлагать услуги по разработке сайтов.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>2025 год</h3>
+                                <h3>Планы на будущее</h3>
+                                <p>Планирую продолжать развивать навыки в сфере программирования, изучать новые технологии и стремиться к карьерному росту в сфере IT.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div id="ContactAndSiteMap">
+                <div id="Contact">
+                    <h3>Свяжитесь со мной</h3>
+                    <p>Электронная почта: <a href="mailto:oelleo698@gmail.com">oelleo698@gmail.com</a></p>
+                    <p>Номер телефона: <a href="tel:+79328607608">+79328607608</a></p>
+                    <p>VK: <a href="https://vk.com/im/convo/497310301?entrypoint=list_all">Терентьев Алексей</a></p>
+                </div>
+                <div id="SiteMap">
+                    <h3>Карта сайта</h3>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li><a href="#start">Главное</a></li>
+                        <li><a href="#projectway">Обо мне</a></li>
+                        <li><a href="#Contact">Связаться со мной</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="TAA">
+                <p>© 2022-2025 Терентьев Алексей Александрович</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
